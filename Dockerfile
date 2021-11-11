@@ -1,4 +1,4 @@
-FROM node:12.20.1-alpine
+FROM node:12.20.1-alpine AS app
 
 RUN apk update
 
@@ -44,3 +44,11 @@ CMD [ "yarn", "watch" ]
 
 COPY ./src ./src
 RUN yarn build
+
+FROM app as app-production
+
+ENV NODE_ENV=production
+RUN yarn install
+EXPOSE 4001
+
+CMD [ "yarn", "start" ]

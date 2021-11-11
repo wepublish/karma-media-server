@@ -1,7 +1,9 @@
 version: '3.7'
 services:
   media:
-    build: .
+    build:
+      context: .
+      target: app
     ports:
       - 4001
     environment:
