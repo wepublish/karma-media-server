@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  media:
+    build: .
+    ports:
+      - 4001
+    environment:
+      NUM_CLUSTERS: 1
+      STORAGE_PATH: ./.media
+      TOKEN: super-secret
+    volumes:
+      - "./src:/home/node/src"
+      - "./node_modules:/home/node/node_modules"
