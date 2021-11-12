@@ -26,6 +26,7 @@ if (cluster.isMaster) {
 
   const token = process.env.TOKEN!
   const storagePath = process.env.STORAGE_PATH!
+  const maxUploadSize = process.env.MAX_UPLOAD_SIZE ? parseInt(process.env.MAX_UPLOAD_SIZE) : 2048 * 2048 * 10;
 
   const port = process.env.PORT ? parseInt(process.env.PORT) : 3004
   const address = process.env.ADDRESS ? process.env.ADDRESS : 'localhost'
@@ -35,7 +36,7 @@ if (cluster.isMaster) {
   startMediaServer({
     storageBackend: new LocalStorageBackend(storagePath),
     imageBackend: new SharpImageBackend(),
-    maxUploadSize: 2048 * 2048 * 10, // 10
+    maxUploadSize,
     port,
     address,
     debug,

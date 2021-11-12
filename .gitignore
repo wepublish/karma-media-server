@@ -1,4 +1,16 @@
+/.env
+/.cache
+/.config
 /.idea
+/.npm
+/.yarn
+/.media
+/dist
+/build
+
 /node_modules
+
 /src/.cache
 /src/.ash_history
+
+/.yarnrc
