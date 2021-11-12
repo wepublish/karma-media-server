@@ -1,4 +1,4 @@
-FROM node:12-alpine AS app
+FROM node:12.20-alpine AS app
 
 RUN apk update
 
