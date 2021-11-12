@@ -3,7 +3,7 @@ name: Docker image release
 on: [pull_request]
 
 jobs:
-  login:
+  docker-image-release:
     runs-on: ubuntu-latest
     steps:
       -
