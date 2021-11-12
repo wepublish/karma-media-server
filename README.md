@@ -9,7 +9,9 @@ docker-compose up
 ```
 Manual upload test
 ```
-curl $(docker-compose port media 4001) -X POST -H "Authorization: Bearer secret" -F file=@package.json
+HOST=$(docker-compose port media 4001)
+ID=$(curl $HOST -X POST -H "Authorization: Bearer secret" -F file=@package.json | jq -r .id)
+curl $HOST/$ID
 ```
 
 ### Local node
@@ -20,6 +22,8 @@ yarn watch
 ```
 
 ## Production docker image
+
+Production image is being pushed on every new master commit as a `ghcr.io/wepublish/karma-media-server:latest`.
 
 Production docker image differs from dev one:
 - has production NODE_ENV set
