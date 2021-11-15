@@ -1,17 +1,16 @@
-/.env
-/.cache
-/.config
-/.idea
-/.npm
-/.yarn
+.env
+.cache
+.config
+.idea
+.npm
+.yarn
+.ash_history
+
 /.media
 /dist
 /build
 
 /node_modules
 
-/src/.cache
-/src/.ash_history
-
-/.yarnrc
+.yarnrc
 docker-compose.override.yml

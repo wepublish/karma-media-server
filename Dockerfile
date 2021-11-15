@@ -34,6 +34,7 @@ RUN mkdir -p /home/node
 WORKDIR /home/node
 
 COPY --chown=node:node ./package.json ./package.json
+COPY --chown=node:node ./yarn.lock ./yarn.lock
 RUN yarn install
 
 ENV ADDRESS=0.0.0.0

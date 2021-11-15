@@ -17,12 +17,12 @@ If you want to develop with code-completion inside docker create following `dock
 echo "services:
   media:
     volumes:
-      - ./node_modules:/home/node/node_modules" > docker-compose.override.yml
+      - .:/home/node" > docker-compose.override.yml
 ```
 
 Then run
 ```
-mkdir -p node_modules/ .media
+mkdir -p .media
 docker-compose run --rm media yarn install
 docker-compose up
 ```
