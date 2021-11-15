@@ -14,3 +14,4 @@
 /src/.ash_history
 
 /.yarnrc
+docker-compose.override.yml

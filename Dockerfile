@@ -37,9 +37,9 @@ COPY --chown=node:node ./package.json ./package.json
 RUN yarn install
 
 ENV ADDRESS=0.0.0.0
-ENV PORT=4001
+ENV PORT=4100
 
-EXPOSE 4001
+EXPOSE 4100
 CMD [ "yarn", "watch" ]
 
 COPY ./src ./src
@@ -49,6 +49,6 @@ FROM app as app-production
 
 ENV NODE_ENV=production
 RUN yarn install
-EXPOSE 4001
+EXPOSE 4100
 
 CMD [ "yarn", "start" ]

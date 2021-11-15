@@ -2,24 +2,39 @@
 
 ## Development
 
-### Using docker
-```
-docker-compose run --rm media yarn install
-docker-compose up
-```
-Manual upload test
-```
-HOST=$(docker-compose port media 4001)
-ID=$(curl $HOST -X POST -H "Authorization: Bearer secret" -F file=@package.json | jq -r .id)
-curl $HOST/$ID
-```
+### Getting started local
 
-### Local node
 ```
 yarn install
 yarn setup
 yarn watch
 ```
+
+### Getting started with docker
+
+If you want to develop with code-completion inside docker create following `docker-compose.override.yml`:
+```
+echo "services:
+  media:
+    volumes:
+      - ./node_modules:/home/node/node_modules" > docker-compose.override.yml
+```
+
+Then run
+```
+mkdir -p node_modules/ .media
+docker-compose run --rm media yarn install
+docker-compose up
+```
+
+## Usage
+
+Manual upload test
+```
+ID=$(curl localhost:4100 -X POST -H "Authorization: Bearer secret" -F file=@package.json | jq -r .id)
+curl localhost:4100/$ID
+```
+
 
 ## Production docker image
 
@@ -33,5 +48,5 @@ Local build and upload test:
 ```
 docker build . --target app-production --tag karma-media-server
 docker run --rm -it -e TOKEN=secret -e STORAGE_PATH=.media --name karma-media-server-local -P karma-media-server
-curl $(docker port karma-media-server-local 4001) -X POST -H "Authorization: Bearer secret" -F file=@package.json
+curl $(docker port karma-media-server-local 4100) -X POST -H "Authorization: Bearer secret" -F file=@package.json
 ```
