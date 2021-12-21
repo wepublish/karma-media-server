@@ -32,6 +32,7 @@ if (cluster.isMaster) {
   const address = process.env.ADDRESS ? process.env.ADDRESS : 'localhost'
 
   const debug = process.env.DEBUG === 'true'
+  const logger = process.env.LOGGER === 'true'
 
   startMediaServer({
     storageBackend: new LocalStorageBackend(storagePath),
@@ -40,7 +41,7 @@ if (cluster.isMaster) {
     port,
     address,
     debug,
-    logger: false,
+    logger,
     token
   })
 }
