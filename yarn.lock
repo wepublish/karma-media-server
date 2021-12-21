@@ -7,22 +7,22 @@
   resolved "https://registry.yarnpkg.com/@hapi/bourne/-/bourne-1.3.2.tgz#0a7095adea067243ce3283e1b56b8a8f453b242a"
   integrity sha512-1dVNHT76Uu5N3eJNTYcvxee+jzX4Z9lfciqRRHCU27ihbUcYi+iSc2iml5Ke1LXe1SyJCLA0+14Jh4tXJgOppA==
 
-"@karma.run/media-image-sharp@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@karma.run/media-image-sharp/-/media-image-sharp-0.2.0.tgz#b57232e0284c8beee9eeb01066a430a6d1d102b1"
-  integrity sha512-dVSGCDMD0v59fuwDzeBGQSIh6KmjpxuRqaU04wFNUE+TLaZfvcLpQ37SLDgZUYJO+TYlSoTad4xU4/RznxDDZg==
+"@types/node@^12.0.10":
+  version "12.20.37"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.20.37.tgz#abb38afa9d6e8a2f627a8cb52290b3c80fbe61ed"
+  integrity sha512-i1KGxqcvJaLQali+WuypQnXwcplhtNtjs66eNsZpp2P2FL/trJJxx/VWsM0YCL2iMoIJrbXje48lvIQAQ4p2ZA==
+
+"@wepublish/krp-media-image-sharp@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@wepublish/krp-media-image-sharp/-/krp-media-image-sharp-0.3.2.tgz#9730b721fdfb99e49f5a69270aa475f8ff87f7cf"
+  integrity sha512-BGU+3P+2cgaFe/NFMKL24zcbniE2jxp9nd51ULwNA96Pctc2uZwUwvGf7HgaEUqIS56vCv82juwh99bTnFDsdQ==
   dependencies:
     sharp "^0.22.1"
 
-"@karma.run/media-storage-local@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@karma.run/media-storage-local/-/media-storage-local-0.1.4.tgz#e2331840c602c268bffc0180cbed7c227c315c4e"
-  integrity sha512-Ne0EF6gTEnsqM3cPJLXdwLasNo/rDtUDx6S1GbBR8E0ICyLlbBSRAMJVLHJ/XZeoETAOCSYzEZ6MyYylpN/+Tw==
-
-"@karma.run/media@^0.2.1":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@karma.run/media/-/media-0.2.2.tgz#79ce0010ec53e047719a9409e7444828d044eb08"
-  integrity sha512-4Z9TOLyI76j18dXSM4OOEp/2lkHbYPsL9O6XeOIGi2Sxq8pT8iLZ+LN4KZai2mMpwtmRWcPApcBAMKD+R8xGrQ==
+"@wepublish/krp-media-server@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@wepublish/krp-media-server/-/krp-media-server-0.3.3.tgz#dca8b74310f6b025b8e71f2dea3781871d64d7ba"
+  integrity sha512-AjkNjc1YSdlWN6jr4CrE5IRjkC/PTpOulKdRbuGSjH0OlUjGxQCnYjl05q0XV/CwMXFE8KPznBHP10aLEPu5zA==
   dependencies:
     buffer-peek-stream "^1.0.1"
     fastify "^2.5.0"
@@ -32,10 +32,10 @@
     pino-pretty "^3.2.0"
     pump "^3.0.0"
 
-"@types/node@^12.0.10":
-  version "12.20.37"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.20.37.tgz#abb38afa9d6e8a2f627a8cb52290b3c80fbe61ed"
-  integrity sha512-i1KGxqcvJaLQali+WuypQnXwcplhtNtjs66eNsZpp2P2FL/trJJxx/VWsM0YCL2iMoIJrbXje48lvIQAQ4p2ZA==
+"@wepublish/krp-media-storage-local@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@wepublish/krp-media-storage-local/-/krp-media-storage-local-0.3.2.tgz#fbfb6b2342c1af913225737fb6b9c3f283c4c477"
+  integrity sha512-CT2KtI8YK1TjzyhL1hu/gZ1u8Xi8NmtXQrV8i/HEdVpucykU9tVWQCDh8yMQZ1tnfo6fpaRJnGipE7/Jb13ciQ==
 
 abbrev@1:
   version "1.1.1"
