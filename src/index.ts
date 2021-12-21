@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import os from 'os'
 import cluster from 'cluster'
-import startMediaServer from '@karma.run/media'
-import LocalStorageBackend from '@karma.run/media-storage-local'
-import SharpImageBackend from '@karma.run/media-image-sharp'
+import startMediaServer from '@wepublish/krp-media-server'
+import LocalStorageBackend from '@wepublish/krp-media-storage-local'
+import SharpImageBackend from '@wepublish/krp-media-image-sharp'
 
 if (cluster.isMaster) {
   const numClusters = process.env.NUM_CLUSTERS
