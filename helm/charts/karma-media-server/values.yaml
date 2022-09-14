@@ -4,7 +4,7 @@ deployment:
   imagePullSecret:
   env:
     TOKEN: media-server-secret
-    DEBUG: false
+    DEBUG: 'false'
     NUM_CLUSTERS: 1
   envFromSecretRefName:
   properties: {}
