@@ -3,24 +3,22 @@ deployment:
   imagePullPolicy: Always
   imagePullSecret:
   env:
-    TOKEN: media-server-secret
+    TOKEN: x3qYBvmWqxVJd6wA9BZ8baiDbYZD
     DEBUG: 'false'
-    NUM_CLUSTERS: 1
-  envFromSecretRefName:
-  properties: {}
+    NUM_CLUSTERS: '1'
   replicaCount: 1
   storagePath: /home/node/wepublish/.media
 
-service:
-  type: ClusterIP
-  port: 80
+  service:
+    type: ClusterIP
+    port: 80
 
-ingress:
-  enabled: true
-  host: media.demo.wepublish.ch
-  path: /
+  ingress:
+    enabled: true
+    host: media-reatch.wepublish.media
+    path: /
 
-pvc:
-  storage: 1Gi
+  pvc:
+    storage: 20Gi
 
-labels: {}
+  labels: { }
