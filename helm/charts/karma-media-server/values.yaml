@@ -1,0 +1,26 @@
+deployment:
+  image: ghcr.io/wepublish/karma-media-server:latest
+  imagePullPolicy: Always
+  imagePullSecret:
+  env:
+    TOKEN: media-server-secret
+    DEBUG: false
+    NUM_CLUSTERS: 1
+  envFromSecretRefName:
+  properties: {}
+  replicaCount: 1
+  storagePath: /home/node/wepublish/.media
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  host: media.demo.wepublish.ch
+  path: /
+
+pvc:
+  storage: 1Gi
+
+labels: {}
