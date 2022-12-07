@@ -1,0 +1,24 @@
+deployment:
+  image: ghcr.io/wepublish/karma-media-server:latest
+  imagePullPolicy: Always
+  imagePullSecret:
+  env:
+    TOKEN: x3qYBvmWqxVJd6wA9BZ8baiDbYZD
+    DEBUG: 'false'
+    NUM_CLUSTERS: '1'
+  replicaCount: 1
+  storagePath: /home/node/wepublish/.media
+
+  service:
+    type: ClusterIP
+    port: 80
+
+  ingress:
+    enabled: true
+    host: media-reatch.wepublish.media
+    path: /
+
+  pvc:
+    storage: 20Gi
+
+  labels: { }
