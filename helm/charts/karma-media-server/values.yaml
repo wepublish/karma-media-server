@@ -18,7 +18,4 @@ deployment:
     host: media-reatch.wepublish.media
     path: /
 
-  pvc:
-    storage: 20Gi
-
   labels: { }
