@@ -1,5 +1,5 @@
 deployment:
-  image: ghcr.io/wepublish/karma-media-server:latest
+  image: seccomch/wep-media-light:latest
   imagePullPolicy: Always
   imagePullSecret:
   env:

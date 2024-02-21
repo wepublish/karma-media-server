@@ -42,20 +42,10 @@ spec:
             - secretRef:
                 name: {{ .Values.deployment.envFromSecretRefName }}
             {{- end }}
-          env:
-            - name: STORAGE_PATH
-              value: {{ .Values.deployment.storagePath }}
           terminationMessagePath: '/dev/termination-log'
           terminationMessagePolicy: 'File'
-          volumeMounts:
-            - name: {{ include "helm.name" . }}
-              mountPath: {{ .Values.deployment.storagePath }}
           {{- with .Values.deployment.properties }}
           {{- toYaml . | nindent 10 }}
           {{- end }}
       securityContext:
         fsGroup: 1000
-      volumes:
-        - name: {{ include "helm.name" . }}
-          persistentVolumeClaim:
-            claimName: {{ include "helm.fullname" . }}
