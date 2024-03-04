@@ -1,5 +1,5 @@
 deployment:
-  image: ghcr.io/wepublish/karma-media-server:latest
+  image: seccomch/wep-media-light:latest
   imagePullPolicy: Always
   imagePullSecret:
   env:
@@ -7,7 +7,6 @@ deployment:
     DEBUG: 'false'
     NUM_CLUSTERS: '1'
   replicaCount: 1
-  storagePath: /home/node/wepublish/.media
 
   service:
     type: ClusterIP
@@ -19,6 +18,7 @@ deployment:
     path: /
 
   pvc:
+    enabled: true
     storage: 20Gi
 
   labels: { }
