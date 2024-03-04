@@ -12,6 +12,9 @@ metadata:
       {{- toYaml . | nindent 4 }}
     {{- end }}
 spec:
+  {{- if .Values.pvc.enabled }}
+  strategy: Recreate
+  {{- end }}
   replicas: {{ .Values.deployment.replicaCount }}
   selector:
     matchLabels:
