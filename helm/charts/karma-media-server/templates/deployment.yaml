@@ -13,7 +13,8 @@ metadata:
     {{- end }}
 spec:
   {{- if .Values.pvc.enabled }}
-  strategy: Recreate
+  strategy:
+    type: Recreate
   {{- end }}
   replicas: {{ .Values.deployment.replicaCount }}
   selector:
