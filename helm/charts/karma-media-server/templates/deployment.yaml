@@ -42,10 +42,26 @@ spec:
             - secretRef:
                 name: {{ .Values.deployment.envFromSecretRefName }}
             {{- end }}
+          {{- if .Values.pvc.enabled }}
+          env:
+            - name: STORAGE_PATH
+              value: /home/node/wepublish/.media
+          {{- end }}
           terminationMessagePath: '/dev/termination-log'
           terminationMessagePolicy: 'File'
+          {{- if .Values.pvc.enabled }}
+          volumeMounts:
+            - name: {{ include "helm.name" . }}
+              mountPath: /home/node/wepublish/.media
+          {{- end }}
           {{- with .Values.deployment.properties }}
           {{- toYaml . | nindent 10 }}
           {{- end }}
       securityContext:
         fsGroup: 1000
+      {{- if .Values.pvc.enabled }}
+      volumes:
+        - name: {{ include "helm.name" . }}
+          persistentVolumeClaim:
+            claimName: {{ include "helm.fullname" . }}
+      {{- end }}
